@@ -5,9 +5,9 @@ import os
 from sklearn.linear_model import LinearRegression
 
 def create_model():
-    df = pd.read_csv("Cancerpays.csv", sep=";")
-    X = df[["Colon", "Stomach"]]
-    y = df["Lung"]
+    df = pd.read_csv("tumors.csv")
+    X = df[["size", "p53_concentration"]]
+    y = df["is_cancerous"]
 
     model = LinearRegression()
     model.fit(X, y)
